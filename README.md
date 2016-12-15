@@ -32,7 +32,9 @@ hhvm convertfull.php <XML LocationHistory file>
 cp -f "finished/<XML LocationHistory file name>" "templates/<XML LocationHistory file name>"
 ```
 
-For 700 000 points, it tooks 4 hours with HHVM. (Simple benchmarking with Paris for major zone of datas)
+For 700 000 points, it tooks 4 hours with HHVM. (Simple benchmarking with Paris for major zone of datas).
+
+The full conversion use a mechanism to split into 2 zones the complete world for performance (typical zone where you have a lot of points and often the same, and the rest of the world).
 
 ## Update Conversion
 - Run 
