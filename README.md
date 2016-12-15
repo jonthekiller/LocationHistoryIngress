@@ -16,16 +16,28 @@ Script to convert Location History file from Google for IITC
   
 
 ## Full Conversion
-- Run <pre>php convertfull.php \<XML LocationHistory file name>
-cp -f "finished/\<XML LocationHistory file name>" "templates/\<XML LocationHistory file name>"</pre>
+- Run 
+```html
+php convertfull.php <XML LocationHistory file name>
+cp -f "finished/<XML LocationHistory file name>" "templates/<XML LocationHistory file name>"
+```
 
 Or
-<pre>hhvm convertfull.php \<XML LocationHistory file></pre>
+```html
+hhvm convertfull.php <XML LocationHistory file>
+cp -f "finished/<XML LocationHistory file name>" "templates/<XML LocationHistory file name>"
+```
 
-For 700 000 points, it can took 4 hours with HHVM.
+For 700 000 points, it tooks 4 hours with HHVM. (Simple benchmarking with Paris for major zone of datas)
 
 ## Update Conversion
-- Run <pre>php convertupdate.php \<XML LocationHistory file></pre>
+- Run 
+```html
+php convertupdate.php <XML LocationHistory file>
+```
 Or
-<pre>hhvm convertupdate.php \<XML LocationHistory file></pre>
+```html
+hhvm convertupdate.php <XML LocationHistory file>
+```
+
 The update mode will take the information from the full conversion to know which datas are new and add to the template file (template is the full file after conversion)
