@@ -5,7 +5,7 @@ Script to convert Location History file from Google for IITC
 - Android Phone with Google Maps History activated (https://support.google.com/accounts/answer/3118687?hl=en)
 - Export your Location History with Google Takeout in KML format (https://takeout.google.com/settings/takeout/custom/location_history?hl=en&gl=US&expflags)
 - Able to run PHP script to convert the file (HHVM highly recommended for performance)
-- PostGIS and GeoServer for IITC vizualisation
+- PostGIS (http://postgis.net/), GDAL (http://www.gdal.org/) and GeoServer (http://geoserver.org/) for IITC vizualisation
 
 # Setup
 - Download all the files and put them in the same folder
@@ -40,4 +40,19 @@ Or
 hhvm convertupdate.php <XML LocationHistory file>
 ```
 
-The update mode will take the information from the full conversion to know which datas are new and add to the template file (template is the full file after conversion)
+The update mode will take the information from the full conversion to know which datas are new and add to the template file (template is the full file after conversion). Update will fail if a full was not done before.
+
+# Import into PostGIS database
+Run
+```html
+ogr2ogr -f "PostgreSQL" PG:"dbname=<PostGIS Database> user=<PostGIS User> password=<PostGIS User password>" "finished/<XML LocationHistory file name>"
+```
+# Publish PostGIS database into GeoServer
+
+http://docs.geoserver.org/latest/en/user/gettingstarted/postgis-quickstart/index.html
+
+# IITC Plugin
+
+Import 
+# Limitations
+- Update mode will not compare points with the Full generated file to remove too close points.
