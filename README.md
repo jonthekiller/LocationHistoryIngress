@@ -66,3 +66,4 @@ You will find a new layer called "Maps History" into IITC layers
 # Limitations
 - Update mode will not compare points with the Full generated file to remove too close points.
 - The whole file is converted, not possible to filter by date
+- It takes into account you played Ingress in all places you visited
