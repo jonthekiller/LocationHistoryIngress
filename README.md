@@ -1,6 +1,10 @@
 # LocationHistoryIngress
 Script to convert Location History file from Google for IITC
 
+# Example
+
+![http://i.imgur.com/qFydgWf.png](http://i.imgur.com/qFydgWf.png)
+
 # Prerequisites
 - Android Phone with Google Maps History activated (https://support.google.com/accounts/answer/3118687?hl=en)
 - Export your Location History with Google Takeout in KML format (https://takeout.google.com/settings/takeout/custom/location_history?hl=en&gl=US&expflags)
@@ -53,6 +57,11 @@ http://docs.geoserver.org/latest/en/user/gettingstarted/postgis-quickstart/index
 
 # IITC Plugin
 
-Import 
+Import the file iitc-plugin-overlay-mapshistory.js into IITC and change the 2 followings parameters:
+- \<Geoserver WMS URL>
+- \<Geoserver Layer name>
+
+You will find a new layer called "Maps History" into IITC layers
+
 # Limitations
 - Update mode will not compare points with the Full generated file to remove too close points.
