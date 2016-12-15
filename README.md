@@ -1,5 +1,5 @@
-# LocationHistoryIngress
-Script to convert Location History file from Google for IITC
+# See your Location History in IITC
+Script to convert Location History file from Google for IITC. The objective is to be able to optimize your Ingress Explorer statistics.
 
 # Example
 
@@ -65,3 +65,4 @@ You will find a new layer called "Maps History" into IITC layers
 
 # Limitations
 - Update mode will not compare points with the Full generated file to remove too close points.
+- The whole file is converted, not possible to filter by date
